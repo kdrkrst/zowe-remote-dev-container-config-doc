@@ -11,6 +11,7 @@ For example, a dev container can provide a convenient way to develop an applicat
 The VS Code Extension for Zowe requires specific configurations within the development container:
 * Installion of node.js
 *	Installation of Java SDK
+  
 This can be configured by setting up the `features` section in the `devcontainer.json` file as follows:
 ```json
 "features": {
