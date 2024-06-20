@@ -98,8 +98,8 @@ To solve this issue, you can add this section to the `devcontainer.json` file:
 	],
 
 	"capAdd": [
-    "IPC_LOCK"
-  ]
+	    "IPC_LOCK"
+	  ]
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
