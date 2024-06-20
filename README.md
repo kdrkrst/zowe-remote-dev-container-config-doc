@@ -50,6 +50,7 @@ These issues arise from the absence of specific packages in the container. To ac
 ```
 This time, the error will transform into something similar to the following:
 > No machine-id detected in docker containers
+  
 The issue requires making the host machine's ID visible inside the container. You can achieve this adding following mounts in the `devcontainer.json` file:
 ```json
 "mounts": [
@@ -59,6 +60,7 @@ The issue requires making the host machine's ID visible inside the container. Yo
 ```
 The last error that needs to be addressed is:
 > /usr/bin/gnome-keyring-daemon: Operation not permitted
+  
 This is the most complex issue since there is no indication as to why the operation is not permitted. Bizarrely, this error is raised because the gnome-keyring-daemon requires a very specific capability to be present in the container: `IPC_LOCK`.  
 To solve this issue, you can add this section to the `devcontainer.json` file:
 ```json
