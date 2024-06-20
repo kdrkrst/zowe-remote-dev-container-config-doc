@@ -68,3 +68,49 @@ To solve this issue, you can add this section to the `devcontainer.json` file:
     "IPC_LOCK"
 ]
 ```
+# Final Content of the Sample devcontainer.json
+```js// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/java
+{
+	"name": "Java",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "none",
+			"installMaven": "true",
+			"installGradle": "false"
+		},
+		"ghcr.io/devcontainers/features/node:1": {
+			"nodeGypDependencies": true,
+			"version": "latest",
+			"nvmVersion": "latest"
+		},
+		"ghcr.io/devcontainers-contrib/features/apt-get-packages:1": {
+			"packages": "libsecret-1-0,dbus-x11,gnome-keyring"
+		}
+	},
+
+	"mounts": [
+		"source=/etc/machine-id,target=/etc/machine-id,type=bind,consistency=cached",
+		"source=/var/lib/dbus/machine-id,target=/var/lib/dbus/machine-id,type=bind,consistency=cached"
+	],
+
+	"capAdd": [
+    "IPC_LOCK"
+  ]
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "java -version",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
+```
